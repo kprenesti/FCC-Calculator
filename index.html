@@ -5,12 +5,21 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script type="text/javascript" src="JS/jquery-1.11.3.min.js"></script>
   <script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="JS/main.js"></script>
 </head>
 <body>
   <div class="wrapper">
+    <div class="info">
+      <h1><a href="http://www.freecodecamp.com/challenges/zipline-build-a-javascript-calculator" target="_blank">Free Code Camp Zipline: Calculator</a></h1>
+      <p>User Stories to fulfill:
+        <ul>
+          <li>"I can add, subtract, multiply, and divide two numbers."</li>
+          <li>"I can clear the input field with a clear button"</li>
+          <li>"I can keep chaining mathematical operations together until I hit the equal button, and the calculator will tell me the correct output"</li>
+        </ul>
+      </p>
+    </div><!--end info-->
     <div class="calculatorBody container">
       <div class="row">
         <div class="col-xs-12">
@@ -19,72 +28,70 @@
       </div><!--end display row -->
       <div class="row buttonGrid">
         <div class="col-xs-3">
-          <button class="func" value="C" id="clear" type="button">C</button>
+          <button class="func" value="C" id="clear" type="button" onclick="clearDisplay()">AC</button>
         </div>
         <div class="col-xs-3">
-          <button class="func" value="/" id="divide" type="button">/</button>
+          <button class="func" value="/" id="divide" type="button" onclick="operation(this)">/</button>
         </div>
         <div class="col-xs-3">
-          <button class="func" value="X" id="multiply" type="button">X</button>
+          <button class="func" value="*" id="multiply" type="button" onclick="operation(this)">*</button>
         </div>
         <div class="col-xs-3">
-          <button class="func" value="backspace" id="backspace" type="button"><span class="glyphicon glyphicon-circle-arrow-left"></span></button>
+          <button class="func" value="backspace" id="backspace" type="button" onclick="backspace()"><span class="glyphicon glyphicon-circle-arrow-left"></span></button>
         </div>
       </div><!--end buttonGrid row 1-->
       <div class="row buttonGrid">
         <div class="col-xs-3">
-          <button class="digit" value="7" id="7" type="button">7</button>
+          <button class="digit" value="7" id="button7" type="button" onclick="digitsAdd(this)">7</button>
         </div>
         <div class="col-xs-3">
-          <button class="digit" value="8" id="8" type="button">8</button>
+          <button class="digit" value="8" id="button8" type="button" onclick="digitsAdd(this)">8</button>
         </div>
         <div class="col-xs-3">
-          <button class="digit" value="9" id="9" type="button">9</button>
+          <button class="digit" value="9" id="button9" type="button" onclick="digitsAdd(this)">9</button>
         </div>
         <div class="col-xs-3">
-          <button class="func" value="minus" id="minus" type="button">-</button>
+          <button class="func" value="-" id="minus" type="button" onclick="operation(this)">-</button>
         </div>
       </div><!--end buttonGrid row 2-->
       <div class="row buttonGrid">
         <div class="col-xs-3">
-          <button class="digit" value="4" id="4" type="button">4</button>
+          <button class="digit" value="4" id="button4" type="button" onclick="digitsAdd(this)">4</button>
         </div>
         <div class="col-xs-3">
-          <button class="digit" value="5" id="5" type="button">5</button>
+          <button class="digit" value="5" id="button5" type="button" onclick="digitsAdd(this)">5</button>
         </div>
         <div class="col-xs-3">
-          <button class="digit" value="6" id="6" type="button">6</button>
+          <button class="digit" value="6" id="button6" type="button" onclick="digitsAdd(this)">6</button>
         </div>
         <div class="col-xs-3">
-          <button class="func" value="plus" id="plus" type="button">+</button>
+          <button class="func" value="+" id="plus" type="button" onclick="operation(this)">+</button>
         </div>
       </div><!--end buttonGrid row 3-->
       <div class="row buttonGrid">
         <div class="col-xs-3">
-          <button class="digit" value="1" id="1" type="button">1</button>
+          <button class="digit" value="1" id="button1" type="button" onclick="digitsAdd(this)">1</button>
         </div>
         <div class="col-xs-3">
-          <button class="digit" value="2" id="2" type="button">2</button>
+          <button class="digit" value="2" id="button2" type="button" onclick="digitsAdd(this)">2</button>
         </div>
         <div class="col-xs-3">
-          <button class="digit" value="3" id="3" type="button">3</button>
+          <button class="digit" value="3" id="button3" type="button" onclick="digitsAdd(this)">3</button>
         </div>
         <div class="col-xs-3">
-          <button class="func" value="parenthesis" id="parenthesis" type="button">()</button>
+          <button class="digit" value="." id="dot" type="button" onclick="digitsAdd(this)">.</button>
         </div>
       </div><!--end buttonGrid row 4-->
       <div class="row buttonGrid">
         <div class="col-xs-3">
-          <button class="digit" value="0" id="0" type="button">0</button>
+          <button class="digit" value="0" id="0" type="button" onclick="digitsAdd(this)">0</button>
         </div>
+
         <div class="col-xs-3">
-          <button class="digit" value="." id="dot" type="button">.</button>
+          <button class="digit" value="+/-" id="posNegToggle" type="button" onclick="changeSigns()">+/-</button>
         </div>
-        <div class="col-xs-3">
-          <button class="digit" value="+/-" id="posNegToggle" type="button">+/-</button>
-        </div>
-        <div class="col-xs-3">
-          <button class="func" value="equals" id="equals" type="button">=</button>
+        <div class="col-xs-6">
+          <button class="func" value="equals" id="equals" type="button" onclick="equals()">=</button>
         </div>
       </div><!--end buttonGrid row 5-->
     </div><!--end container-->
