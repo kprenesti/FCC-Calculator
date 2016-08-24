@@ -1,11 +1,19 @@
 .wrapper {
-  background-color: blue;
+  background: url("img/calculatorImg.jpg") center center no-repeat;
+  background-size: cover;
   padding: 20px;
   height: 100vh; }
+  .wrapper .info {
+    background-color: rgba(85, 73, 82, 0.5);
+    padding: 20px;
+    width: 100%;
+    text-align: center; }
+    .wrapper .info ul {
+      list-style-type: none; }
 
 .wrapper > .calculatorBody {
   box-shadow: 5px 5px 5px #666;
-  background-color: grey;
+  background-color: #554952;
   width: 30%;
   margin: 0 auto;
   text-align: center;
@@ -66,5 +74,3 @@ ul {
 @media (max-width: 375px) {
   .wrapper > .calculatorBody {
     min-width: 90%; } }
-
-/*# sourceMappingURL=styles.css.map */
