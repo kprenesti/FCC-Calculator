@@ -6,3 +6,4 @@ This is a simple calculator based on vanilla JavaScript, HTML, and CSS
 - JavaScript
 - HTML
 - CSS
+- Bootstrap 3
