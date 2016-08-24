@@ -1,13 +1,26 @@
 .wrapper {
+<<<<<<< HEAD
   background: url('https://hd.unsplash.com/photo-1457200246108-d9d4abc27953') center center no-repeat;
+=======
+  background: url('img/calculatorImg.jpg') center center no-repeat;
+>>>>>>> 5a666a8cc8276cfd847aa5c00b3c873df2d677da
   background-size: cover;
   padding: 20px;
   height: 100vh;
+  .info {
+    background-color: rgba(#554952, .5);
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    ul {
+      list-style-type: none;
+    }
+  }
 }
 
 .wrapper > .calculatorBody {
   box-shadow: 5px 5px 5px #666;
-  background-color: grey;
+  background-color: #554952;
   width: 30%;
   margin: 0 auto;
   text-align: center;
